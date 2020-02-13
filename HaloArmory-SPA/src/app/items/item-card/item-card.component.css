@@ -11,6 +11,7 @@
   transition-timing-function: ease-out;
   border-radius: 10px;
   max-width: 300px;
+ 
 }
 
 .card-body {
@@ -18,7 +19,7 @@
 }
 .card {
   margin-bottom: 30px;
-  max-height: 490px;
+  min-height: 500px;
 }
 
 .card:hover {
