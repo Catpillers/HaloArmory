@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemService } from 'src/app/_models/_services/item.service';
 import { Item } from 'src/app/_models/Item';
+import { ActivatedRoute } from '@angular/router';
+import { Pagination, PaginatedResult } from 'src/app/_models/pagination';
+
+
 
 @Component({
   selector: 'app-items-list',
@@ -8,21 +12,33 @@ import { Item } from 'src/app/_models/Item';
   styleUrls: ['./items-list.component.css']
 })
 export class ItemsListComponent implements OnInit {
-
+  pagination: Pagination;
   items: Item[];
 
-  constructor(private service: ItemService) { }
+  constructor(private service: ItemService, private roots: ActivatedRoute) { }
 
   ngOnInit() {
+    this.roots.data.subscribe(data => {
+      this.items = data['items'].result;
+      this.pagination = data['items'].pagination;
+
+    })
+  }
+
+  pageChanged(event: any): void {
+    this.pagination.currentPage = event.page;
     this.loadItems();
   }
 
   loadItems() {
-    this.service.getItems().subscribe((items: Item[]) => {
-      this.items = items;
+    this.service.getItems(this.pagination.currentPage, this.pagination.itemsPerPage).subscribe((data: PaginatedResult<Item[]>) => {
+      this.items = data.result;
+      this.pagination = data.pagination;
+      console.log(this.items);
     }, error => {
       console.log(error);
     }
     );
+
   }
 }

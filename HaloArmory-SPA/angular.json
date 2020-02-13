@@ -5,7 +5,9 @@
   "projects": {
     "HaloArmory-SPA": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {"@schematics/angular:component": {
+        "styleext": "scss"
+      }},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -24,6 +26,9 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/css-star-rating/css/star-rating.css",
+              "./node_modules/bootswatch/dist/spacelab/bootstrap.min.css",
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
@@ -90,6 +95,8 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -121,6 +128,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "HaloArmory-SPA"
 }

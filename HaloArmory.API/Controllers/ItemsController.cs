@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using HaloArmory.API.Data;
 using HaloArmory.API.Dto;
+using HaloArmory.API.Helpers;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HaloArmory.API.Controllers
@@ -24,10 +25,13 @@ namespace HaloArmory.API.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> GetItems()
+        public async Task<IActionResult> GetItems([FromQuery]ItemsParams itemsParams)
         {
-            var items = await _repo.GetItems();
+            var items = await _repo.GetItems(itemsParams);
             var itemsToReturn = _mapper.Map<IEnumerable<ItemsForDisplayDto>>(items);
+
+            Response.AddPagination(items.CurrentPage, items.PageSize, 
+                                    items.TotalCount, items.TotalPages);
 
             return Ok(itemsToReturn); 
         }
