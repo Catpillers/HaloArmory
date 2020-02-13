@@ -8,9 +8,12 @@ import { Item } from 'src/app/_models/Item';
 })
 export class ItemCardComponent implements OnInit {
 @Input() item: Item;
+shotText: boolean;
   constructor() { }
 
   ngOnInit() {
   }
+
+
 
 }
