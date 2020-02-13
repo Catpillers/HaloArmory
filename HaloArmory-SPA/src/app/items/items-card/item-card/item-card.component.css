@@ -1,20 +1,16 @@
-.card:hover img  {
-  transform: scale(1);
+.card:hover img {
+  transform: scale(1.1);
   transition-duration: 500ms;
   transition-timing-function: ease-out;
   opacity: 0.7;
-  
-  
 }
 
 .card img {
   transform: scale(0.8);
   transition-duration: 500ms;
-  transition-timing-function: ease-out;
-  padding: 10px;
+  transition-timing-function: ease-out; 
   border-radius: 10px;
-  max-width: 400px;
- 
+  max-width: 300px;
 }
 
 .card-body {
@@ -22,6 +18,7 @@
 }
 .card {
   margin-bottom: 30px;
+  max-height: 750px;
 }
 
 .card:hover {
@@ -30,15 +27,19 @@
   transition-duration: 700ms;
   transition-timing-function: ease-out;
   box-shadow: 1px 1px 30px #465750 !important;
-  
-  
 }
 
-.name{
+.name {
   font-weight: bold;
+  margin-top: 30px;
 }
 
-.card:hover .name{
+.card:hover .name {
   text-shadow: 1px 1px 3px forestgreen;
 }
 
+.img-wrapper{
+  padding: 20px;
+  max-height: 117px;
+
+}
