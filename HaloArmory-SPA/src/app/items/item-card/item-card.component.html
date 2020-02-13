@@ -1,9 +1,13 @@
 <div class="card shadow" style="width: 18rem;">
   <div class="img-wrapper"><img class="card-img-top" src="{{ item.image }}" alt="Card image cap" /></div>
-  <div class="card-body">
+  <div class="card-body mycard">
     <h5 class="card-title text-center name">{{ item.name }}</h5>
     <hr />
-    <p class="card-text">{{ item.description }}</p>
+    <p style="margin-bottom: 0;"><strong>Type:</strong> {{ item.type }}</p>
+    <hr>
+    <p style="margin-bottom: 0;"><strong>Durability:</strong> {{ item.durability }}</p>
+    <hr>
+    <p class="card-text"><strong>Description:</strong> {{ item.description }}</p>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item"></li>

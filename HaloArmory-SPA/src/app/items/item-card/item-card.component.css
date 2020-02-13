@@ -11,15 +11,19 @@
   transition-timing-function: ease-out;
   border-radius: 10px;
   max-width: 300px;
+  margin-top: 5px;
  
+}
+.list-group-item{
+  margin: 1px;
 }
 
 .card-body {
   padding: 16px;
+  max-height: 21rem;
 }
 .card {
-  margin-bottom: 30px;
-  min-height: 500px;
+  margin-bottom: 40px;
 }
 
 .card:hover {
