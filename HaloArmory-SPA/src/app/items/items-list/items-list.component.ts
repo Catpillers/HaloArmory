@@ -14,6 +14,8 @@ import { Pagination, PaginatedResult } from 'src/app/_models/pagination';
 export class ItemsListComponent implements OnInit {
   pagination: Pagination;
   items: Item[];
+  itemParams: any = {};
+
 
   constructor(private service: ItemService, private roots: ActivatedRoute) { }
 
@@ -22,7 +24,9 @@ export class ItemsListComponent implements OnInit {
       this.items = data['items'].result;
       this.pagination = data['items'].pagination;
 
-    })
+    });
+    this.itemParams.minPrice = 0;
+    this.itemParams.maxPrice = 9999;
   }
 
   pageChanged(event: any): void {
@@ -30,8 +34,15 @@ export class ItemsListComponent implements OnInit {
     this.loadItems();
   }
 
+  resetFilters() {
+    this.itemParams.minPrice = 0;
+    this.itemParams.maxPrice = 9999;
+    this.loadItems();
+  }
+
   loadItems() {
-    this.service.getItems(this.pagination.currentPage, this.pagination.itemsPerPage).subscribe((data: PaginatedResult<Item[]>) => {
+    this.service.getItems(this.pagination.currentPage, this.pagination.itemsPerPage, 
+                          this.itemParams).subscribe((data: PaginatedResult<Item[]>) => {
       this.items = data.result;
       this.pagination = data.pagination;
       console.log(this.items);

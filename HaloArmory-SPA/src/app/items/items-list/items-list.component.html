@@ -1,12 +1,15 @@
-<form class="form-inline form" novalidate>
+<form class="form-inline form" #form="ngForm"(ngSubmit)="loadItems()" novalidate>
   <div class="form-group">
-    <label for="minAge">Price From / To</label>
-    <input type="number" class="form-control ml-1" style="width: 100px" id="minAge" name="minAge">
+    <label for="minPrice">Price From / To</label>
+    <input type="number" class="form-control ml-1" style="width: 100px" id="minAge" 
+    [(ngModel)]="itemParams.minPrice" name="minAge">
   </div>
 
   <div class="form-group px-2">
-    <label for="maxAge"> - </label>
-    <input type="number" class="form-control ml-1" style="width: 100px" id="maxAge" name="maxAge">
+    <label for="maxPrice"> - </label>
+    <input type="number" class="form-control ml-1" style="width: 100px" id="maxAge" 
+    [(ngModel)]="itemParams.maxPrice"
+    name="maxPrice"> 
   </div>
 
   <div class="form-group px-2">
@@ -26,7 +29,7 @@
     </select>
   </div>
   <button type="submit" class="btn btn-primary" style="margin-left:10px">Apply Filters</button>
-  <button type="button" class="btn btn-info" style="margin-left:10px">Reset Filter</button>
+  <button type="button" class="btn btn-info" style="margin-left:10px" (click)='resetFilters()'>Reset Filter</button>
 </form>
 <br>
 

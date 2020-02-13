@@ -17,14 +17,18 @@ export class ItemService {
 
 
 
-  getItems(page?, itemsPerPage?): Observable<PaginatedResult<Item[]>> {
+  getItems(page?, itemsPerPage?, itemParams?): Observable<PaginatedResult<Item[]>> {
     const paginatedResult: PaginatedResult<Item[]> = new PaginatedResult<Item[]>();
     let params = new HttpParams();
     if (page != null && itemsPerPage != null) {
       params = params.append('pageNumber', page);
       params = params.append('pageSize', itemsPerPage);
     }
-    return this.http.get<Item[]>(this.baseUrl + 'items', { observe: 'response', params})
+    if (itemParams != null) {
+      params = params.append('minPrice', itemParams.minPrice);
+      params = params.append('maxPrice', itemParams.maxPrice);
+    }
+    return this.http.get<Item[]>(this.baseUrl + 'items', { observe: 'response', params })
       .pipe(
         map(response => {
           paginatedResult.result = response.body;
