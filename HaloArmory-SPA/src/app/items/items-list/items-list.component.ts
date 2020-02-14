@@ -13,13 +13,13 @@ import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 @Component({
   selector: 'app-items-list',
   templateUrl: './items-list.component.html',
-  styleUrls: ['./items-list.component.css']
+  styleUrls: ['./items-list.component.scss']
 })
 export class ItemsListComponent implements OnInit {
   pagination: Pagination;
   items: Item[];
   itemParams: any = {};
-  public types = [{ name: 'armour', selected: true }, { name: 'weapon', selected: true }];
+  public types = [{ name: 'Armour', selected: true }, { name: 'Weapon', selected: true }];
 
   form: FormGroup;
 
@@ -47,7 +47,6 @@ export class ItemsListComponent implements OnInit {
     });
     this.itemParams.minPrice = 0;
     this.itemParams.maxPrice = 9999;
-    this.itemParams.types = 'armour';
   }
 
 
@@ -73,23 +72,18 @@ export class ItemsListComponent implements OnInit {
 
 
   loadItems() {
-    this.itemParams.types = this.form.value.types.map((selected, i) => {
-          return {
-            type: this.types[i].name
-          };
-        });
-        console.log(this.itemParams);
+    const formTypes = this.form.value.types.map((selected, i) => {
+      return {
+        name: this.types[i].name,
+        selected
+      };
+    });
+    this.itemParams.types = formTypes.filter(type => type.selected).map(type => type.name);
+    console.log(this.itemParams);
     this.service.getItems(this.pagination.currentPage, this.pagination.itemsPerPage,
       this.itemParams).subscribe((data: PaginatedResult<Item[]>) => {
         this.items = data.result;
         this.pagination = data.pagination;
-        // this.itemParams.types = Object.assign({}, value, {
-        //   types: value.types.map((selected, i) => {
-        //     return {
-        //       type: this.myTypes.types[i].name
-        //     };
-        //   })
-        // });
       }, error => {
         console.log(error);
       }

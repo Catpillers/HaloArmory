@@ -8,7 +8,7 @@ import { Item } from '../_models/Item';
 @Injectable()
 export class ItemList implements Resolve<Item[]> {
     pageNumber = 1;
-    pageSize = 5;
+    pageSize = 8;
     constructor(
         private itemService: ItemService,
     ) { }

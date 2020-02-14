@@ -1,0 +1,34 @@
+.container {
+  margin-top: 50px;
+  max-width: 1900px;
+  position: relative;
+}
+.form {
+  margin-top: 40px;
+  justify-content: center;
+  margin-bottom: 0px;
+  position: sticky;
+  top: 80px;
+  border-right: solid 1px rgba(24, 74, 131, 0.842);
+  margin-left: 20px;
+  float: left;
+  margin-right:100px;
+
+}
+.mybox {
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+  
+}
+.myType {
+  font-weight: bold;
+  margin-left: 8px;
+  font-size: large;
+  color: whitesmoke;
+}
+
+.mycheck{
+  font-weight: bold;
+  color: whitesmoke;
+}

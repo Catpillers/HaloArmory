@@ -1,0 +1,60 @@
+.card:hover img {
+  transform: scale(1.1);
+  transition-duration: 500ms;
+  transition-timing-function: ease-out;
+  
+}
+
+.card img {
+  transform: scale(0.8);
+  transition-duration: 500ms;
+  transition-timing-function: ease-out;
+  border-radius: 10px;
+  max-width: 250px;
+  margin-top: 5px;
+  margin-bottom: 3px;
+ 
+}
+.list-group-item{
+  margin: 1px;
+}
+
+.card-body {
+  padding: 16px;
+  max-width: 300px;
+  
+  
+}
+.card {
+  margin-bottom: 40px;
+  max-width: 300px;
+  margin-top: 10px;
+  opacity: 0.8;
+  border-radius: 20px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  transition-duration: 700ms;
+  transition-timing-function: ease-in;
+  box-shadow: 1px 1px 60px #00bdf7 !important;
+  opacity: 1.0;
+}
+
+.name {
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.card:hover .name {
+  text-shadow: 1px 1px 3px forestgreen;
+}
+
+.img-wrapper {
+  padding: 20px;
+  max-height: 117px;
+
+}
+.price{
+  font-weight: bold;
+}

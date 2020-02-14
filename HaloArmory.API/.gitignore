@@ -1,4 +1,9 @@
 .vscode
 bin
 obj
-
+.dtbcache
+dblock
+.suo
+storage.ide
+slnx.sqlite
+VSWorkspaceState.json

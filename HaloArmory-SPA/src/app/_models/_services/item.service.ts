@@ -23,14 +23,14 @@ export class ItemService {
     if (page != null && itemsPerPage != null) {
       params = params.append('pageNumber', page);
       params = params.append('pageSize', itemsPerPage);
-      
+
     }
     if (itemParams != null) {
       params = params.append('minPrice', itemParams.minPrice);
       params = params.append('maxPrice', itemParams.maxPrice);
-      params = params.append('types', itemParams.types);
-     
-
+      for (const type of itemParams.types) {
+        params = params.append('types', type);
+      }
     }
     return this.http.get<Item[]>(this.baseUrl + 'items', { observe: 'response', params })
       .pipe(
