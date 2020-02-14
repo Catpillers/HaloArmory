@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Pagination, PaginatedResult } from 'src/app/_models/pagination';
 
 
+// tslint:disable-next-line: no-debugger
 
 @Component({
   selector: 'app-items-list',
@@ -15,7 +16,14 @@ export class ItemsListComponent implements OnInit {
   pagination: Pagination;
   items: Item[];
   itemParams: any = {};
+  // typeList = [{value: 'armour'}, {value: 'weapon'}];
 
+  // TODO: Rewright this! Use angular form instead!
+  // https://netbasal.com/handling-multiple-checkboxes-in-angular-forms-57eb8e846d21
+  types = [
+    { name: 'armour', checked: false },
+    { name: 'weapon', checked: false }
+  ];
 
   constructor(private service: ItemService, private roots: ActivatedRoute) { }
 
@@ -23,10 +31,13 @@ export class ItemsListComponent implements OnInit {
     this.roots.data.subscribe(data => {
       this.items = data['items'].result;
       this.pagination = data['items'].pagination;
-
     });
     this.itemParams.minPrice = 0;
     this.itemParams.maxPrice = 9999;
+    this.itemParams.type = this.types
+      .filter(opt => opt.checked)
+      .map(opt => opt.name) 
+        console.log(this.itemParams);
   }
 
   pageChanged(event: any): void {
@@ -41,15 +52,13 @@ export class ItemsListComponent implements OnInit {
   }
 
   loadItems() {
-    this.service.getItems(this.pagination.currentPage, this.pagination.itemsPerPage, 
-                          this.itemParams).subscribe((data: PaginatedResult<Item[]>) => {
-      this.items = data.result;
-      this.pagination = data.pagination;
-      console.log(this.items);
-    }, error => {
-      console.log(error);
-    }
-    );
-
+    this.service.getItems(this.pagination.currentPage, this.pagination.itemsPerPage,
+      this.itemParams).subscribe((data: PaginatedResult<Item[]>) => {
+        this.items = data.result;
+        this.pagination = data.pagination;
+      }, error => {
+        console.log(error);
+      }
+      );
   }
 }

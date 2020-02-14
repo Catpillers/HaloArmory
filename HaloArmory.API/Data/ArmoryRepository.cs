@@ -19,6 +19,14 @@ namespace HaloArmory.API.Data
         public async Task<PagedList<Item>> GetItems(ItemsParams itemsParams)
         {
             var items = _context.Items.AsQueryable();
+            
+            if(itemsParams.WeaponType != null || itemsParams.ArmourType != null)
+            {
+                var armour = itemsParams.ArmourType;
+                var weapon = itemsParams.WeaponType;
+                items = items.Where(t => t.Type == armour || t.Type == weapon);
+            }
+            
             if (itemsParams.MinPrice != 0 || itemsParams.MaxPrice != 9999)
             {
                 var min = itemsParams.MinPrice;
@@ -26,12 +34,7 @@ namespace HaloArmory.API.Data
                 items = items.Where(p => p.Price >= min && p.Price <= max);
             }
 
-            if (!string.IsNullOrEmpty(itemsParams.Name))
-            {
-                
-                items = items.Where(n => itemsParams.Name.Contains(n.Name.FirstOrDefault()));
-            }
-
+            
             return await PagedList<Item>.CreatAsync(items, itemsParams.PageNumber, itemsParams.PageSize);
         }
     }

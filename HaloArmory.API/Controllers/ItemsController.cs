@@ -28,6 +28,7 @@ namespace HaloArmory.API.Controllers
         public async Task<IActionResult> GetItems([FromQuery]ItemsParams itemsParams)
         {
             var items = await _repo.GetItems(itemsParams);
+            
             var itemsToReturn = _mapper.Map<IEnumerable<ItemsForDisplayDto>>(items);
 
             Response.AddPagination(items.CurrentPage, items.PageSize, 
