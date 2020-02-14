@@ -28,7 +28,8 @@ export class ItemService {
     if (itemParams != null) {
       params = params.append('minPrice', itemParams.minPrice);
       params = params.append('maxPrice', itemParams.maxPrice);
-      params = params.append('type', itemParams.type);
+      params = params.append('types', itemParams.types);
+     
 
     }
     return this.http.get<Item[]>(this.baseUrl + 'items', { observe: 'response', params })

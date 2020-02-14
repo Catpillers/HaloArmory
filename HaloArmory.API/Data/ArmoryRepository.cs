@@ -19,13 +19,13 @@ namespace HaloArmory.API.Data
         public async Task<PagedList<Item>> GetItems(ItemsParams itemsParams)
         {
             var items = _context.Items.AsQueryable();
-            
-            if(itemsParams.WeaponType != null || itemsParams.ArmourType != null)
-            {
-                var armour = itemsParams.ArmourType;
-                var weapon = itemsParams.WeaponType;
-                items = items.Where(t => t.Type == armour || t.Type == weapon);
+
+            if(itemsParams.Types != null)
+            {  
+                items = items.Where( t => itemsParams.Types.Contains(t.Type));
+              
             }
+            
             
             if (itemsParams.MinPrice != 0 || itemsParams.MaxPrice != 9999)
             {

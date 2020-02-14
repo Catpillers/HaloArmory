@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace HaloArmory.API.Helpers
 {
     public class ItemsParams
@@ -11,8 +13,7 @@ namespace HaloArmory.API.Helpers
             set { pageSize =  (value > MaxPageSize) ? MaxPageSize : value; }
         }
         
-        public string WeaponType { get; set; }
-        public string ArmourType { get; set; }
+        public List<string> Types { get; set; }
         public int MinPrice { get; set; } = 18;
         public int MaxPrice { get; set; } = 9999;
 

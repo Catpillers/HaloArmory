@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ItemsListComponent } from './items/items-list/items-list.component';
+import { ReactiveFormsModule} from '@angular/forms';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule } from '@angular/router';
@@ -32,7 +33,8 @@ import { ItemCardComponent } from './items/item-card/item-card.component';
     RouterModule.forRoot(appRoute),
     PaginationModule.forRoot(),
     FormsModule,
-    StarRatingModule.forRoot()
+    StarRatingModule.forRoot(),
+    ReactiveFormsModule
 
 
 
