@@ -5,7 +5,8 @@ using HaloArmory.API.Models;
 namespace HaloArmory.API.Helpers
 {
     public class AutoMapperProfile : Profile
-    {   public AutoMapperProfile()
+    {
+        public AutoMapperProfile()
         {
             CreateMap<Item, ItemsForDisplayDto>();
         }

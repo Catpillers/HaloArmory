@@ -7,7 +7,7 @@ namespace HaloArmory.API.Data
 {
     public interface IArmoryRepository
     {
-         Task<PagedList<Item>> GetItems(ItemsParams itemsParams);
-    
+        Task<PagedList<Item>> GetItems(ItemsParams itemsParams);
+
     }
 }

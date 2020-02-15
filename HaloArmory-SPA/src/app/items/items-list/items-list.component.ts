@@ -19,13 +19,14 @@ export class ItemsListComponent implements OnInit {
   pagination: Pagination;
   items: Item[];
   itemParams: any = {};
-  public types = [{ name: 'Armour', selected: true }, { name: 'Weapon', selected: true }];
-
+  types = [{
+    name: 'Armour',
+    selected: false
+  }, {
+    name: 'Weapon',
+    selected: false
+  }];
   form: FormGroup;
-
-
-  // TODO: Rewright this! Use angular form instead!
-  // https://netbasal.com/handling-multiple-checkboxes-in-angular-forms-57eb8e846d21
 
 
   constructor(private service: ItemService, private roots: ActivatedRoute,
@@ -50,7 +51,6 @@ export class ItemsListComponent implements OnInit {
   }
 
 
-
   pageChanged(event: any): void {
     this.pagination.currentPage = event.page;
     this.loadItems();
@@ -66,7 +66,7 @@ export class ItemsListComponent implements OnInit {
   resetFilters() {
     this.itemParams.minPrice = 0;
     this.itemParams.maxPrice = 9999;
-    console.log(this.itemParams);
+    this.form.reset();
     this.loadItems();
   }
 
@@ -86,11 +86,8 @@ export class ItemsListComponent implements OnInit {
         this.pagination = data.pagination;
       }, error => {
         console.log(error);
-      }
-      );
+      });
   }
-
-
 
 
 }

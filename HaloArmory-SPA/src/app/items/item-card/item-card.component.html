@@ -1,20 +1,36 @@
 <div class="card shadow" style="max-height: 585px;">
-  <div class="img-wrapper"><img class="card-img-top" src="{{ item.image }}" alt="Card image cap" /></div>
+  <div class="img-wrapper">
+    <img class="card-img-top" src="{{ item.image }}" alt="Card image cap" />
+  </div>
   <div class="card-body mycard">
-    <h5 class="card-title text-center name">{{ item.name }}</h5>
+    <h5 class="card-title text-center">{{ item.name }}</h5>
     <hr />
-    <p style="margin-bottom: 0;"><strong>Type:</strong> {{ item.type }}</p>
-    <hr>
-    <p style="margin-bottom: 0;"><strong>Durability:</strong> {{ item.durability }}</p>
-    <hr>
-    <p class="card-text"><strong>Description:</strong> {{ item.description }}</p>
+    <p class="namesOnCard"><strong>Type:</strong> {{ item.type }}</p>
+    <hr />
+    <p class="namesOnCard">
+      <strong>Durability:</strong> {{ item.durability }}
+    </p>
+    <hr />
+    <p class="card-text">
+      <strong>Description:</strong> {{ item.description }}
+    </p>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item"></li>
-    <li class="list-group-item text-center price">{{ item.price }}$ per unit</li>
+    <li class="list-group-item text-center price">
+      {{ item.price }}$ per unit
+    </li>
   </ul>
-  <div class="card-body float-left">
-    <star-rating [starType]="'svg'" [rating]="2.63"></star-rating>
-    <a href="#" class="float-right" style="font-weight: bold;">{{ item.reviews }} Reviews</a>
+  <div class="card-body float-left" *ngIf="item.price < 1000">
+    <star-rating [starType]="'svg'" [rating]="4.0"></star-rating>
+    <a href="#" class="float-right">{{ item.reviews }} Reviews</a>
+  </div>
+  <div class="card-body float-left" *ngIf="item.price >= 1000 && item.price < 2000">
+    <star-rating [starType]="'svg'" [rating]="3.0"></star-rating>
+    <a href="#" class="float-right">{{ item.reviews }} Reviews</a>
+  </div>
+  <div class="card-body float-left" *ngIf="item.price > 2000">
+    <star-rating [starType]="'svg'" [rating]="5.0"></star-rating>
+    <a href="#" class="float-right">{{ item.reviews }} Reviews</a>
   </div>
 </div>
