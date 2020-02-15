@@ -28,11 +28,11 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/css-star-rating/css/star-rating.scss",
-              "./node_modules/bootswatch/dist/spacelab/bootstrap.min.scss",
-              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.scss",
-              "./node_modules/bootstrap/dist/scss/bootstrap.min.css",
-              "src/styles.scss"
+              "./node_modules/css-star-rating/css/star-rating.css",
+              "./node_modules/bootswatch/dist/spacelab/bootstrap.min.css",
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css"
             ],
             "scripts": []
           },
