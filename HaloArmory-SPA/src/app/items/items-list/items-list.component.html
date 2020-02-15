@@ -2,13 +2,13 @@
   <form class="form-group form" [formGroup]="form" (submit)="loadItems()">
     <div class="form-group" id="min-price">
       <label for="minPrice" class="myType">Price</label>
-      <input type="number" min="0" class="form-control ml-1 number-input" id="minPrice"
+      <input type="number" min="0"  max="9999" class="form-control ml-1 number-input" id="minPrice"
         [(ngModel)]="itemParams.minPrice" [ngModelOptions]="{standalone: true}" Name="minPrice">
     </div>
     <span>-</span>
     <div class="form-group px-2" id="max-price">
       <label for="maxPrice"></label>
-      <input type="number" max="9999" class="form-control ml-1 number-input" id="maxPrice"
+      <input type="number" min="0" max="9999" class="form-control ml-1 number-input" id="maxPrice"
         [(ngModel)]="itemParams.maxPrice" [ngModelOptions]="{standalone: true}" Name="maxPrice">
     </div>
     <hr>

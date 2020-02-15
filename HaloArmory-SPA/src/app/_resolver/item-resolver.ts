@@ -9,12 +9,16 @@ import { Item } from '../_models/Item';
 export class ItemList implements Resolve<Item[]> {
     pageNumber = 1;
     pageSize = 4;
+    itemParams = {
+        maxPrice: 9999,
+        minPrice: 1
+    }
     constructor(
         private itemService: ItemService,
     ) { }
 
     resolve(route: ActivatedRouteSnapshot): Observable<Item[]> {
-        return this.itemService.getItems(this.pageNumber, this.pageSize).pipe(
+        return this.itemService.getItems(this.pageNumber, this.pageSize, this.itemParams).pipe(
             catchError(() => {
                 return of(null);
             })

@@ -29,8 +29,7 @@ export class ItemsListComponent implements OnInit {
   form: FormGroup;
 
 
-  constructor(private service: ItemService, private roots: ActivatedRoute,
-    private fb: FormBuilder) {
+  constructor(private service: ItemService, private roots: ActivatedRoute, private fb: FormBuilder) {
     this.form = this.fb.group({
       types: this.buildTypes()
     });

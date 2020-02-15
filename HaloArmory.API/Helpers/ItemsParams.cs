@@ -12,12 +12,8 @@ namespace HaloArmory.API.Helpers
             get { return pageSize; }
             set { pageSize = (value > MaxPageSize) ? MaxPageSize : value; }
         }
-
         public List<string> Types { get; set; }
-        public int MinPrice { get; set; } = 18;
-        public int MaxPrice { get; set; } = 9999;
-
-
-
+        public int MinPrice { get; set; }
+        public int MaxPrice { get; set; }
     }
 }
