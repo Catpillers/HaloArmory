@@ -1,5 +1,6 @@
 .card {
   margin-bottom: 40px;
+  max-height: 585px;
   max-width: 300px;
   margin-top: 10px;
   opacity: 0.8;
@@ -43,6 +44,7 @@
 .card-body {
   padding: 16px;
   max-width: 300px;
+  
   & a {
     font-weight: bold;
   }
