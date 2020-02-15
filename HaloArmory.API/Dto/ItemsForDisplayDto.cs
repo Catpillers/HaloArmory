@@ -9,5 +9,6 @@ namespace HaloArmory.API.Dto
         public int Price { get; set; }
         public string Reviews { get; set; }
         public string Image { get; set; }
+        public double Rating { get; set; }
     }
 }

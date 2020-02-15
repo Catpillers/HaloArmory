@@ -10,6 +10,6 @@ namespace HaloArmory.API.Models
         public string Description { get; set; }
         public int Price { get; set; }
         public string Reviews { get; set; }
-
+        public double Rating { get; set; }
     }
 }

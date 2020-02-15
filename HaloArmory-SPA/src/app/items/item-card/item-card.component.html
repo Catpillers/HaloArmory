@@ -21,16 +21,8 @@
       {{ item.price }}$ per unit
     </li>
   </ul>
-  <div class="card-body float-left" *ngIf="item.price < 1000">
-    <star-rating [starType]="'svg'" [rating]="4.0"></star-rating>
-    <a href="#" class="float-right">{{ item.reviews }} Reviews</a>
-  </div>
-  <div class="card-body float-left" *ngIf="item.price >= 1000 && item.price < 2000">
-    <star-rating [starType]="'svg'" [rating]="3.0"></star-rating>
-    <a href="#" class="float-right">{{ item.reviews }} Reviews</a>
-  </div>
-  <div class="card-body float-left" *ngIf="item.price > 2000">
-    <star-rating [starType]="'svg'" [rating]="5.0"></star-rating>
+  <div class="card-body float-left">
+    <star-rating [starType]="'svg'" [rating]="item.rating" [showHalfStars]="true"></star-rating>
     <a href="#" class="float-right">{{ item.reviews }} Reviews</a>
   </div>
 </div>

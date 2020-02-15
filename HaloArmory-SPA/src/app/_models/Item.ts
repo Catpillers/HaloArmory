@@ -7,4 +7,5 @@ export interface Item {
     description: string;
     price: number;
     reviews: string;
+    rating: number;
 }
