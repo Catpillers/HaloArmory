@@ -13,8 +13,6 @@ namespace HaloArmory.API.Helpers
             this.ItemsPerPage = itemsPerPage;
             this.TotalItems = totalItems;
             this.TotalPages = totalPages;
-
-
         }
 
     }

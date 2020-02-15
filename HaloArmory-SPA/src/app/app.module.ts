@@ -14,18 +14,12 @@ import { FormsModule } from '@angular/forms';
 import { StarRatingModule } from 'angular-star-rating';
 import { ItemCardComponent } from './items/item-card/item-card.component';
 
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
     ItemsListComponent,
     ItemCardComponent,
     NavbarComponent
-
-
   ],
   imports: [
     BrowserModule,
@@ -35,9 +29,6 @@ import { ItemCardComponent } from './items/item-card/item-card.component';
     FormsModule,
     StarRatingModule.forRoot(),
     ReactiveFormsModule
-
-
-
   ],
   providers: [
     ItemList

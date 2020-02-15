@@ -20,9 +20,7 @@ namespace HaloArmory.API.Controllers
         {
             this._mapper = mapper;
             this._repo = repo;
-
         }
-
 
         [HttpGet]
         public async Task<IActionResult> GetItems([FromQuery]ItemsParams itemsParams)
@@ -31,8 +29,7 @@ namespace HaloArmory.API.Controllers
 
             var itemsToReturn = _mapper.Map<IEnumerable<ItemsForDisplayDto>>(items);
 
-            Response.AddPagination(items.CurrentPage, items.PageSize,
-                                    items.TotalCount, items.TotalPages);
+            Response.AddPagination(items.CurrentPage, items.PageSize, items.TotalCount, items.TotalPages);
 
             return Ok(itemsToReturn);
         }

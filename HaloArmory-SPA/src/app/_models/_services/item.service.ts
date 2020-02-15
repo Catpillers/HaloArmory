@@ -15,8 +15,6 @@ export class ItemService {
 
   constructor(private http: HttpClient) { }
 
-
-
   getItems(page?, itemsPerPage?, itemParams?): Observable<PaginatedResult<Item[]>> {
     const paginatedResult: PaginatedResult<Item[]> = new PaginatedResult<Item[]>();
     let params = new HttpParams();
@@ -45,5 +43,4 @@ export class ItemService {
         })
       );
   }
-
 }
