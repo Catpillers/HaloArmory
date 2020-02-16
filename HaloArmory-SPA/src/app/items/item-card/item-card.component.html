@@ -12,7 +12,7 @@
     </p>
     <hr />
     <p class="card-text">
-      <strong>Description:</strong> {{ item.description }}
+      <strong>Description:</strong> {{ (item.description.length > 115) ? (item.description | slice:0:115)+'..' : (item.description) }}
     </p>
   </div>
   <ul class="list-group list-group-flush">
