@@ -1,37 +1,35 @@
-<div class="container">
-  <form class="form-group form" [formGroup]="form" (submit)="loadItems()">
-    <div class="form-group" id="min-price">
-      <label for="minPrice" class="myType">Price</label>
-      <input type="number" min="0"  max="9999" class="form-control ml-1 number-input" id="minPrice"
-        [(ngModel)]="itemParams.minPrice" [ngModelOptions]="{standalone: true}" Name="minPrice">
-    </div>
-    <span>-</span>
-    <div class="form-group px-2" id="max-price">
-      <label for="maxPrice"></label>
-      <input type="number" min="0" max="9999" class="form-control ml-1 number-input" id="maxPrice"
-        [(ngModel)]="itemParams.maxPrice" [ngModelOptions]="{standalone: true}" Name="maxPrice">
-    </div>
-    <hr>
-    <p class="myType">Type:</p>
-    <div class="form-check" *ngFor="let type of formTypes['controls']; let i = index">
-      <input class="form-check-input mybox" type="checkbox" [formControl]="type">
-      <label class="form-check-label" for="formTypes">
-        <p class="mycheck">{{types[i].name}}</p>
-      </label>
-    </div>
-    <hr>
-    <button type="submit" class="btn btn-primary btn-sm">Apply Filters</button>
-    <button type="button" class="btn btn-dark btn-sm" (click)='resetFilters()'>Reset Filter</button>
-  </form>
-  <br>
-  <div class="row">
-    <div class="col-lg-auto" *ngFor="let item of items">
+<div class="container-fluid">
+  <div class="row-fluid">
+    <form class="form-group form" [formGroup]="form" (submit)="loadItems()">
+      <div class="form-group" id="min-price">
+        <label for="minPrice" class="myType">Price</label>
+        <input type="number" min="0"  max="9999" class="form-control ml-1 number-input" id="minPrice"
+          [(ngModel)]="itemParams.minPrice" [ngModelOptions]="{standalone: true}" Name="minPrice">
+      </div>
+      <span>-</span>
+      <div class="form-group px-2" id="max-price">
+        <label for="maxPrice"></label>
+        <input type="number" min="0" max="9999" class="form-control ml-1 number-input" id="maxPrice"
+          [(ngModel)]="itemParams.maxPrice" [ngModelOptions]="{standalone: true}" Name="maxPrice">
+      </div>
+      <hr>
+      <p class="myType">Type:</p>
+      <div class="form-check" *ngFor="let type of formTypes['controls']; let i = index">
+        <input class="form-check-input mybox" type="checkbox" [formControl]="type">
+        <label class="form-check-label" for="formTypes">
+          <p class="mycheck">{{types[i].name}}</p>
+        </label>
+      </div>
+      <hr>
+      <button type="submit" class="btn btn-primary btn-sm">Apply Filters</button>
+      <button type="button" class="btn btn-dark btn-sm" (click)='resetFilters()'>Reset Filter</button>
+    </form>
+    <div class="card-wrapper" *ngFor="let item of items">
       <app-item-card [item]="item"></app-item-card>
-    </div>
+      </div>
   </div>
 </div>
-
-
+  
 <div class="d-flex justify-content-center page-list">
   <pagination [boundaryLinks]="true" [totalItems]="pagination.totalItems" [itemsPerPage]="pagination.itemsPerPage"
     [(ngModel)]="pagination.currentPage" (pageChanged)="pageChanged($event)" previousText="&lsaquo;" nextText="&rsaquo;"

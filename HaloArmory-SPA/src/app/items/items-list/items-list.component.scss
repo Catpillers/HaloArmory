@@ -1,8 +1,5 @@
-.container {
+.container-fluid{
   margin-top: 50px;
-  max-width: 1900px;
-  position: relative;
-  
   & span {
     margin-left: 10px;
     color: honeydew;
@@ -11,14 +8,13 @@
 
 .form {
   margin-top: 40px;
-  justify-content: center;
   margin-bottom: 0px;
+  min-width: 300px;
   position: sticky;
-  top: 80px;
   border-right: solid 1px rgba(24, 74, 131, 0.842);
   margin-left: 20px;
   float: left;
-  margin-right: 150px;
+  margin-right: 250px;
 }
 
 .mybox {
@@ -53,12 +49,6 @@
   margin-right: 5px;
 }
 
-.page-list {
-  position: fixed;
-  top: 800px;
-  left: 855px;
-}
-
 #min-price {
   display: inline-block;
   margin-left: 5px;
@@ -71,3 +61,23 @@
 .number-input {
   width: 90px;
 }
+
+.row-fluid{
+ 
+  margin-top: 100px;
+}
+
+.card-wrapper{
+  display: inline-block;
+}
+
+// @media screen and (max-width: 400px){
+//   .row-fluid{
+//     display: inline-block;
+//     min-width: 600px;
+//    }
+//   .form{
+//     position: static;
+//   }
+ 
+//   }
