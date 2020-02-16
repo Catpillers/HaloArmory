@@ -1,8 +1,9 @@
+@import "../../../shared/colors.scss";
 .container-fluid{
   margin-top: 50px;
   & span {
     margin-left: 10px;
-    color: honeydew;
+    color: $hint-of-green;
   }
 }
 
@@ -10,7 +11,7 @@
   margin: 40px;
   min-width: 300px;
   position: sticky;
-  border-right: solid 1px rgba(24, 74, 131, 0.842);
+  border-right: solid 1px rgba($chathams-blue, 0.842);
   float: left;
 }
 
@@ -24,17 +25,17 @@
   font-weight: bold;
   margin-left: 8px;
   font-size: large;
-  color: whitesmoke;
+  color: $wild-sand;
 }
 
 .mycheck {
   font-weight: bold;
-  color: whitesmoke;
+  color: $wild-sand;
 }
 
 .btn {
   opacity: 0.8;
-  border-color: black;
+  border-color: $black;
 }
 
 .btn-primary {

@@ -1,10 +1,12 @@
+@import "../../shared/colors.scss";
+
 .logo {
   font-weight: bold;
-  color: white;
-  text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.438);
+  color: $white;
+  text-shadow: 1px 1px 5px rgba($white, 0.438);
 }
 
 .navbar {
   opacity: 0.7;
-  background-color: blue;
+  background-color: $blue;
 }

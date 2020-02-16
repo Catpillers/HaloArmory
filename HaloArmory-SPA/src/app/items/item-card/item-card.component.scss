@@ -1,3 +1,5 @@
+@import "../../../shared/colors.scss";
+
 .card {
   margin-bottom: 40px;
   max-width: 300px;
@@ -27,7 +29,7 @@
     transform: scale(1.05);
     transition-duration: 650ms;
     transition-timing-function: ease-out;
-    box-shadow: 1px 1px 60px #00bdf7 !important;
+    box-shadow: 1px 1px 60px $cerulean !important;
     opacity: 1;
   }
 
@@ -38,7 +40,7 @@
   }
 
   &:hover h5 {
-    text-shadow: 1px 1px 3px forestgreen;
+    text-shadow: 1px 1px 3px $forest-green;
   }
 }
 
