@@ -7,14 +7,11 @@
 }
 
 .form {
-  margin-top: 40px;
-  margin-bottom: 0px;
+  margin: 40px;
   min-width: 300px;
   position: sticky;
   border-right: solid 1px rgba(24, 74, 131, 0.842);
-  margin-left: 20px;
   float: left;
-  margin-right: 250px;
 }
 
 .mybox {
@@ -71,13 +68,9 @@
   display: inline-block;
 }
 
-// @media screen and (max-width: 400px){
-//   .row-fluid{
-//     display: inline-block;
-//     min-width: 600px;
-//    }
-//   .form{
-//     position: static;
-//   }
- 
-//   }
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .form {
+    margin: 25px;
+  }
+}
