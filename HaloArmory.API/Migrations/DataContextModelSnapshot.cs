@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HaloArmory.API.Migrations
 {
-    [DbContext(typeof(DataContext))]
+    [DbContext(typeof(HaloArmoryDbContext))]
     partial class DataContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

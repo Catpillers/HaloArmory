@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HaloArmory.API.Migrations
 {
-    [DbContext(typeof(DataContext))]
+    [DbContext(typeof(HaloArmoryDbContext))]
     [Migration("20200215183423_UpdateItemWithRating")]
     partial class UpdateItemWithRating
     {

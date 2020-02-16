@@ -7,8 +7,8 @@ namespace HaloArmory.API.Data
 {
     public class ArmoryRepository : IArmoryRepository
     {
-        private readonly DataContext _context;
-        public ArmoryRepository(DataContext context)
+        private readonly HaloArmoryDbContext _context;
+        public ArmoryRepository(HaloArmoryDbContext context)
         {
             this._context = context;
         }

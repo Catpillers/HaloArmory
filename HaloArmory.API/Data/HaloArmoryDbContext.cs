@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HaloArmory.API.Data
 {
-    public class DataContext : DbContext
+    public class HaloArmoryDbContext : DbContext
     {
-        public DataContext(DbContextOptions<DataContext> options) : base(options) { }
+        public HaloArmoryDbContext(DbContextOptions<HaloArmoryDbContext> options) : base(options) { }
         public DbSet<Item> Items { get; set; }
     }
 }
