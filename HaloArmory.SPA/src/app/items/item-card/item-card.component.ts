@@ -8,7 +8,6 @@ import { Item } from 'src/app/_models/Item';
 })
 export class ItemCardComponent {
     @Input() item: Item;
-    shotText: boolean;
 
     constructor() { }
 }
