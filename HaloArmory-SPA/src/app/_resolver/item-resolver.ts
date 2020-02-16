@@ -13,6 +13,7 @@ export class ItemList implements Resolve<Item[]> {
         maxPrice: 9999,
         minPrice: 1
     }
+
     constructor(
         private itemService: ItemService,
     ) { }
